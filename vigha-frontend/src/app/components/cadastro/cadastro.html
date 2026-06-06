@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Cadastro</h2>
+
+  @if (erro) {
+    <div class="erro">{{ erro }}</div>
+  }
+  @if (sucesso) {
+    <div class="sucesso">{{ sucesso }}</div>
+  }
+
+  <input type="email" placeholder="Email" [(ngModel)]="email" />
+  <input type="password" placeholder="Senha (mín. 6 caracteres)" [(ngModel)]="senha" />
+
+  <button (click)="cadastrar()">Cadastrar</button>
+
+  <p>Já tem conta? <a routerLink="/login">Entrar</a></p>
+</div>
