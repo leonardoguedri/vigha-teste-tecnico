@@ -40,7 +40,7 @@ router.get('/callback',
       process.env.JWT_SECRET,
       { expiresIn: '8h' }
     );
-    res.redirect(`http://localhost:4200/login?token=${token}`);
+    res.redirect(`https://vigha-teste-tecnico.vercel.app/login?token=${token}`);
   }
 );
 
