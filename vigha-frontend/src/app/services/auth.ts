@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://vigha-teste-tecnico.onrender.com';
 
   constructor(private http: HttpClient, private router: Router) {}
 
