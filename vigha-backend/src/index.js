@@ -10,7 +10,10 @@ const googleRoutes = require('./routes/google');
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:4200', credentials: true }));
+app.use(cors({ 
+  origin: ['http://localhost:4200', 'https://vigha-teste-tecnico.vercel.app'], 
+  credentials: true 
+}));
 app.use(express.json());
 app.use(session({
   secret: process.env.SESSION_SECRET,
