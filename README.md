@@ -2,12 +2,29 @@
 
 CRUD completo de usuários com autenticação JWT.
 
+## 🚀 Deploy
+
+- **Frontend:** https://vigha-teste-tecnico.vercel.app
+- **Backend:** https://vigha-teste-tecnico.onrender.com
+
+---
+
 ## Tecnologias
 
 - **Frontend:** Angular 19
 - **Backend:** Node.js + Express
 - **Banco de dados:** MySQL
-- **Autenticação:** JWT (jsonwebtoken) + bcrypt
+- **Autenticação:** JWT (jsonwebtoken) + bcrypt + OAuth Google
+
+---
+
+## Diferenciais implementados
+
+- ✅ Login com OAuth Google
+- ✅ Deploy em produção (Vercel + Render + FreeSQLDatabase)
+- ✅ Token JWT com expiração de 8h
+- ✅ Senhas armazenadas com bcrypt (hash + salt)
+- ✅ Rotas protegidas no frontend e backend
 
 ---
 
@@ -43,6 +60,10 @@ DB_PASSWORD=sua_senha_do_mysql
 DB_NAME=vigha_db
 JWT_SECRET=uma_chave_secreta_forte
 PORT=3000
+GOOGLE_CLIENT_ID=seu_google_client_id
+GOOGLE_CLIENT_SECRET=seu_google_client_secret
+GOOGLE_CALLBACK_URL=http://localhost:3000/auth/google/callback
+SESSION_SECRET=uma_chave_secreta_para_sessao
 ```
 
 ### Como rodar
@@ -61,6 +82,7 @@ O servidor estará disponível em `http://localhost:3000`
 |--------|------|-----------|--------------|
 | POST | /auth/cadastro | Cadastrar usuário | Não |
 | POST | /auth/login | Login e geração de token | Não |
+| GET | /auth/google | Login com Google | Não |
 | GET | /usuarios | Listar usuários | Sim |
 | PUT | /usuarios/:id | Editar usuário | Sim |
 | DELETE | /usuarios/:id | Excluir usuário | Sim |
@@ -84,5 +106,5 @@ O frontend estará disponível em `http://localhost:4200`
 ## Como usar
 
 1. Acesse `http://localhost:4200/cadastro` e crie uma conta
-2. Faça login em `http://localhost:4200/login`
+2. Faça login em `http://localhost:4200/login` com email/senha ou com Google
 3. Visualize, edite e exclua usuários na tabela
